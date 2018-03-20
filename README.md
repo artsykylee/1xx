@@ -12,3 +12,4 @@ inside out project version 100.1
 inside out project version 100.2
   -fixed by adjusting bootstrap column widths wrapping
   them inside a bootstrap row
+  
