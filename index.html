@@ -12,23 +12,7 @@
 <!--styles used for the header and body of the page -->
 <link rel="stylesheet" href="assets/css/header-resize.css">
 <link rel="stylesheet" href="assets/css/footer-resize.css">
-    <script>
-    function init() {
-        window.addEventListener('scroll', function(e){
-            var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-                shrinkOn = 300,
-                header = document.querySelector("header");
-            if (distanceY > shrinkOn) {
-                classie.add(header,"smaller");
-            } else {
-                if (classie.has(header,"smaller")) {
-                    classie.remove(header,"smaller");
-                }
-            }
-        });
-    }
-    window.onload = init();
-</script>
+
 </head>
 
 <body>
@@ -158,4 +142,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" 
         
 integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> 
+
+<!-- 
+All JavaScript used in the app that 
+is custom will come from the app.js file 
+-->
+<script src="assets/js/app.js"></script>
 
