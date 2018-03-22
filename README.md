@@ -15,3 +15,7 @@ inside out project version 100.2
 
 inside out project version 101.0
   -added first level of navigation.
+  -created assets/js/app.js
+  -created assets/data/menu.json
+  -moved hear resize js to app.js
+  
