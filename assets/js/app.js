@@ -26,7 +26,7 @@ function init() {
 
             var menu = menuBuilder(data.menu);
             
-            $('nav').append('<a href="' + data.MenuLink + '">' + data.MenuName + '</a>');
+            $('nav').append(menu);
         },
         error: function () {
             console.log('all is not good');
@@ -47,6 +47,7 @@ function menuBuilder(obj) {
             theMenu = theMenu + '<li><a href="#">' + item.MenuName + '</a>';
 
             if (item.Menus.length > 0) {
+                
                 theMenu = theMenu + menuBuilder(item.Menus);
             }
 
