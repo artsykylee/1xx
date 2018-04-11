@@ -1,3 +1,6 @@
+/* CSS Document */
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -239,6 +242,6 @@ header {
   #info-bar span.all-tutorials {
     border-bottom: solid 1px #0793e2; } }
 /*
-https://bootsnipp.com/snippets/5Kap7
-/* CSS Document */
-
+    https://bootsnipp.com/snippets/5Kap7
+    Resize & Fixed Header (shrinking header)
+*/
