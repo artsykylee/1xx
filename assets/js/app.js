@@ -23,11 +23,8 @@ function init() {
         url: 'assets/data/menu.json',
         dataType: 'json',
         success: function (data) {
-            console.log('calling the menuBuilder function');
-            var menu = menuBuilder(data.menu);
-            console.log('call to menuBuilder completed');
 
-            console.log(menu);
+            var menu = menuBuilder(data.menu);
 
             $('nav').append(menu);
 
@@ -46,10 +43,6 @@ function menuBuilder(obj) {
 
     var theMenu = '';
 
-<<<<<<< HEAD
-
-window.onload = init();
-=======
     if (obj.length > 0) {
 
         theMenu = theMenu + '<ul>';
@@ -71,9 +64,10 @@ window.onload = init();
         theMenu = theMenu + '</ul>';
 
     } else {
+
         console.log('no data');
 
     }
+
     return theMenu;
 }
->>>>>>> 102-0
