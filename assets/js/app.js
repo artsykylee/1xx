@@ -23,8 +23,11 @@ function init() {
         url: 'assets/data/menu.json',
         dataType: 'json',
         success: function (data) {
-
+            console.log('calling the menuBuilder function');
             var menu = menuBuilder(data.menu);
+            console.log('call to menuBuilder completed');
+
+            console.log(menu);
 
             $('nav').append(menu);
 
@@ -64,7 +67,7 @@ function menuBuilder(obj) {
         theMenu = theMenu + '</ul>';
 
     } else {
-
+        console.log('no data');
 
     }
     return theMenu;
