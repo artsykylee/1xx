@@ -16,6 +16,42 @@ function init() {
             }
         }
     });
+<<<<<<< HEAD
+=======
+
+
+    $.ajax({
+        method: 'GET',
+        url: 'assets/data/menu.json',
+        dataType: 'json',
+        success: function (data) {
+            
+            console.log('all good');
+            console.log(data.menu.length);
+            console.log(data.menu);
+
+            if (data.menu.length > 0) {
+
+                data.menu.forEach(function (data) {
+
+                    console.log(data.MenuName);
+                    console.log(data.MenuLink);
+
+                    $('nav').append('<a href="' + data.MenuLink + '">' + data.MenuName + '</a>');
+
+                });
+            }
+
+        },
+        error: function () {
+            console.log('all is not good');
+        }
+    });
+
+
+
+}
+>>>>>>> 101-0
 
     $.ajax({
         method: 'GET',
@@ -36,6 +72,7 @@ function init() {
                     //console.log(data.MenuName);
                     //console.log(data.MenuLink);
 
+<<<<<<< HEAD
                     //$('nav').append('<a href="' + data.MenuLink + '">' + data.MenuName + '</a>');
 
                 //});
@@ -58,3 +95,6 @@ function menuBuilder(obj) {
     }
         
 }
+=======
+window.onload = init();
+>>>>>>> 101-0
