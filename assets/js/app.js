@@ -16,10 +16,7 @@ function init() {
             }
         }
     });
-<<<<<<< HEAD
-=======
-
-
+    
     $.ajax({
         method: 'GET',
         url: 'assets/data/menu.json',
@@ -41,24 +38,21 @@ function init() {
 
                 });
             }
-
         },
         error: function () {
             console.log('all is not good');
         }
     });
-
-
-
 }
->>>>>>> 101-0
 
     $.ajax({
         method: 'GET',
         url: 'assets/data/menu.json',
         dataType: 'json',
-        success: function (data) {
+        success: function (data) 
+            console.log('calling the menu builder function');
             var menu = menuBuilder(data.menu);
+            console.log('menuBuilder function complete');
             
             
             //console.log('all good');
@@ -71,8 +65,6 @@ function init() {
 
                     //console.log(data.MenuName);
                     //console.log(data.MenuLink);
-
-<<<<<<< HEAD
                     //$('nav').append('<a href="' + data.MenuLink + '">' + data.MenuName + '</a>');
 
                 //});
@@ -83,18 +75,15 @@ function init() {
             console.log('all is not good');
         }
     });
-}
 
 function menuBuilder(obj) {
     var theMenu = '';
     
     if (obj.length >0) {
-        console.log(obj)
+        console.log(obj);
     }else{
-        console.log('no data')
+        console.log('no data');
     }
         
 }
-=======
-window.onload = init();
->>>>>>> 101-0
+
