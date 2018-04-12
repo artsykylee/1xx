@@ -1,5 +1,6 @@
 // JavaScript Document
 
+window.onload = init();
 
 function init() {
 
@@ -15,27 +16,30 @@ function init() {
             }
         }
     });
-    
-$.ajax({
+
+    $.ajax({
         method: 'GET',
         url: 'assets/data/menu.json',
         dataType: 'json',
-        success: function (data) { 
-            console.log('all good');
-            console.log(data.menu.length);
-            console.log(data.menu);
+        success: function (data) {
+            var menu = menuBuilder(data.menu);
+            
+            
+            //console.log('all good');
+            //console.log(data.menu.length);
+            //console.log(data.menu);
 
-            if (data.menu.length > 0) {
+            //if (data.menu.length > 0) {
 
-                data.menu.forEach(function (data) {
+                //data.menu.forEach(function (data) {
 
-                    console.log(data.MenuName);
-                    console.log(data.MenuLink);
+                    //console.log(data.MenuName);
+                    //console.log(data.MenuLink);
 
-                    $('nav').append('<a href="' + data.MenuLink + '">' + data.MenuName + '</a>');
+                    //$('nav').append('<a href="' + data.MenuLink + '">' + data.MenuName + '</a>');
 
-                });
-            }
+                //});
+            //}
 
         },
         error: function () {
@@ -43,4 +47,14 @@ $.ajax({
         }
     });
 }
-window.onload = init();
+
+function menuBuilder(obj) {
+    var theMenu = '';
+    
+    if (obj.length >0) {
+        console.log(obj)
+    }else{
+        console.log('no data')
+    }
+        
+}
