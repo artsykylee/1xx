@@ -71,3 +71,20 @@
                 "MenuLink": "ahead_of_me.html",
                 "Menus": {}
             }
+
+        ]
+    }, {
+        "MenuName": "you",
+        "MenuLink": "you.html",
+        "Menus": [{
+            "MenuName": "profile",
+            "MenuLink": "profile.html",
+            "Menus": {}
+        }, {
+            "MenuName": "settings",
+            "MenuLink": "settings.html",
+            "Menus": {}
+        }]
+    }]
+
+}
