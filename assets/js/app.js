@@ -27,6 +27,8 @@ function init() {
             var menu = menuBuilder(data.menu);
 
             $('nav').append(menu);
+            
+            $("#loaderDiv").fadeOut("slow");
 
         },
         error: function () {
