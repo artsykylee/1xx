@@ -36,9 +36,23 @@ function init() {
         }
     });
 
+    $.ajax({
+        method: 'GET',
+        url: 'https://me.creativeleekylee.com/wp-json/wp-api-menus/v2/menus/5',
+        dataType: 'json',
+        success: function(data) {
+            var menu = menuBuilder(data.items, 'genLinks', 'footer-ul');
+            $('#genLinks').replaceWith(menu);
+            $('#genLinks li a').click(function() {
+                getPage($(this).data("pgid"));
+            });
+        },
+        error: function() {
+            console.log('all is not good');
+        }
+    });
+
 }
-
-
 
 function menuBuilder(obj) {
 
@@ -93,28 +107,29 @@ function getPage(obj) {
             console.log('bad');
         }
     });
+    getPosts();
 }
-function getPage(obj) {
+
+function getPosts() {    
     $.ajax({
         method: 'GET',
-        url: 'https://me.creativeleekylee.com/wp-json/wp/v2/pages/5' + obj,
+        url: 'https://me.creativeleekylee.com/wp-json/wp/v2/posts?orderby=data&order=asc&per_page=5',
         dataType: 'json',
         success: function(data) {
-            var pgbuild = '';
-            pgbuild = '<section><div class="container">' + data.content.rendered + '</div></section>';
-            $("#content").fadeOut(function() {
-                $('html').animate({
-                    scrollTop: 0
-                }, 'slow'); //IE, FF
-                $('body').animate({
-                    scrollTop: 0
-                }, 'slow'); //chrome, don't know if Safari works
-                $(this).html(pgbuild).fadeIn();
-                $("#loaderDiv").fadeOut("slow");
+            $("#latestPosts").html('<p id="postLdr"><i class="fa fa-cogs"></i> Loading Posts</p>');
+            data.forEach(function (item){
+                var myDate = new Date(item.date);
+                
+                $("latestPosts").prepend('<p>'+ item.title.rendered + '<span>' + myDate.getMonth()+ '-' + myDate.getDay()+ myDate.getFullYear() +'</span></p>');
+                
             });
+            $("#postLdr").remove();
         },
-        error: function() {
+        error:function (){
             console.log('bad');
         }
     });
 }
+    
+
+                    
