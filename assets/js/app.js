@@ -59,10 +59,17 @@ function init() {
 function menuBuilder(obj, targetEl, classInfo) {
     var theMenu = '';
     if (obj.length > 0) {
+<<<<<<< HEAD
         let target = (targetEl)?' id="'+targetEl+'"':'';
         let elClass = (classInfo)?' class="'+classInfo+'"':'';
         theMenu = theMenu + '<ul'+target+''+elClass+'>';
         console.log(theMenu+' '+target);
+=======
+        let target = (targetEl) ? ' id="' + targetEl + '"' : '';
+        let elClass = (classInfo) ? ' class="' + classInfo + '"' : '';
+        theMenu = theMenu + '<ul' + target + '' + elClass + '>';
+        console.log(theMenu + ' ' + target);
+>>>>>>> 105/106
         obj.forEach(function (item) {
             theMenu = theMenu + '<li><a href="#" data-pgid="' + item.object_id + '">' + item.title + '</a>';
             if (item.children) {
@@ -103,4 +110,29 @@ function getPage(obj) {
             console.log('bad');
         }
     });
+<<<<<<< HEAD
+=======
+    getPosts();
+}
+
+function getPosts() {
+
+    $.ajax({
+        method: 'GET',
+        url: 'https://me.creativeleekylee.com/wp-json/wp/v2/posts?orderby=date&order=asc&per_page5',
+        datatype: 'json',
+        success: function (data) {
+            $("#latestPosts").html('<p id="postLdr"><i class="fa fa-cogs"></i> Loading Posts</p>');
+            data.forEach(function (item) {
+                var myDate = new Date(item.date);
+                $("#latestPosts").prepend('<p>' + item.title.rendered + '<span>' + myDate.getMonth() + '-' + myDate.getDay() + '-' + myDate.getFullYear() + '</span></p>');
+            });
+            $("#postLdr").remove();
+        },
+        error: function () {
+            console.log('bad');
+        }
+
+    });
+>>>>>>> 105/106
 }
