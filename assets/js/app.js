@@ -59,17 +59,10 @@ function init() {
 function menuBuilder(obj, targetEl, classInfo) {
     var theMenu = '';
     if (obj.length > 0) {
-<<<<<<< HEAD
         let target = (targetEl)?' id="'+targetEl+'"':'';
         let elClass = (classInfo)?' class="'+classInfo+'"':'';
         theMenu = theMenu + '<ul'+target+''+elClass+'>';
         console.log(theMenu+' '+target);
-=======
-        let target = (targetEl) ? ' id="' + targetEl + '"' : '';
-        let elClass = (classInfo) ? ' class="' + classInfo + '"' : '';
-        theMenu = theMenu + '<ul' + target + '' + elClass + '>';
-        console.log(theMenu + ' ' + target);
->>>>>>> 105/106
         obj.forEach(function (item) {
             theMenu = theMenu + '<li><a href="#" data-pgid="' + item.object_id + '">' + item.title + '</a>';
             if (item.children) {
@@ -110,8 +103,6 @@ function getPage(obj) {
             console.log('bad');
         }
     });
-<<<<<<< HEAD
-=======
     getPosts();
 }
 
@@ -134,5 +125,5 @@ function getPosts() {
         }
 
     });
->>>>>>> 105/106
+
 }
